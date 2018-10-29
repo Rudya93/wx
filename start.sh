@@ -13,7 +13,6 @@ echo "This script is about to run another scripts"
 chmod 775 init.sh
 chmod 775 repo.sh
 chmod 775 conf.sh
-chmod 775 rdp.sh
 echo "run init"
 sh ./init.sh
 echo "configuration"
