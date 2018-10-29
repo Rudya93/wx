@@ -5,7 +5,6 @@ sudo apt install -y gnupg2
 read -p 'input pass: ' pass
 read -p 'input git user name: ' gitusnm
 read -p 'input git user email: ' gitusem
-read -p 'input gerrit user name: ' gerritusnm
 gpg --passphrase $pass --output init.sh --decrypt init.sh.gpg
 gpg --passphrase $pass --output repo.sh --decrypt repo.sh.gpg
 gpg --passphrase $pass --output conf.sh --decrypt conf.sh.gpg
@@ -18,9 +17,8 @@ sh ./init.sh
 echo "configuration"
 export gitusnm
 export gitusem
-export gerritusnm
 sh ./conf.sh
-echo "run repo"
-export gerritusnm
-sh ./repo.sh
+#echo "run repo"
+#export gitusnm
+#sh ./repo.sh
 
