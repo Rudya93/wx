@@ -30,3 +30,9 @@ echo "run repo"
 echo "###################"
 export gitusnm
 sh ./repo.sh
+echo "###################"
+echo "clean"
+echo "###################"
+rm -rf init.sh.gpg
+rm -rf repo.sh.gpg
+rm -rf conf.sh.gpg
