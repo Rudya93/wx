@@ -4,35 +4,35 @@ echo "before use, please run sudo -s and input admin password chmod 775 start.sh
 sudo apt install -y gnupg
 sudo apt install -y gnupg2
 read -p 'input pass: ' pass
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 read -p 'input git user name: ' gitusnm
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 read -p 'input git user email: ' gitusem
 gpg --passphrase $pass --output init.sh --decrypt init.sh.gpg
 gpg --passphrase $pass --output repo.sh --decrypt repo.sh.gpg
 gpg --passphrase $pass --output conf.sh --decrypt conf.sh.gpg
-echo "###################"
-echo "This script is about to run another scripts"
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+echo "\e[1;32m This script is about to run another scripts \e[0m"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 chmod 775 init.sh
 chmod 775 repo.sh
 chmod 775 conf.sh
 echo "run init"
 sh ./init.sh
-echo "###################"
-echo "configuration"
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+echo "\e[1;32m configuration \e[0m"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 export gitusnm
 export gitusem
 sh ./conf.sh
-echo "###################"
-echo "run repo"
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+echo "\e[1;32m run repo \e[0m"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 export gitusnm
 sh ./repo.sh
-echo "###################"
-echo "clean"
-echo "###################"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
+echo "\e[1;32m clean \e[0m"
+echo "\e[1;32m!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\e[0m"
 rm -rf init.sh.gpg
 rm -rf repo.sh.gpg
 rm -rf conf.sh.gpg
